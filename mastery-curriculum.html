@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, print-scale: 100%">
+    <title>Mastery Curriculum | 4 Tracks + Metaphysics | Integrated</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+            color: #1e2a3e;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #0b3b4f 0%, #1f5068 100%);
+            color: white;
+            padding: 28px 32px;
+        }
+        .header h1 {
+            margin: 0 0 6px 0;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+        .header p {
+            margin: 0;
+            opacity: 0.85;
+            font-size: 1rem;
+        }
+        .header small {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        .tabs {
+            display: flex;
+            background: #eef2f7;
+            border-bottom: 1px solid #cbdbe0;
+            padding-left: 20px;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .tab-button {
+            background: transparent;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 30px 30px 0 0;
+            transition: all 0.2s ease;
+            color: #2c5f7a;
+            font-family: inherit;
+        }
+        .tab-button:hover {
+            background: #e2e8f0;
+        }
+        .tab-button.active {
+            background: white;
+            color: #0b3b4f;
+            border-bottom: 3px solid #2c7da0;
+        }
+        .tab-content {
+            display: none;
+            padding: 28px 32px;
+            background: white;
+            animation: fade 0.2s ease;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h2 {
+            font-size: 1.7rem;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #1f5068;
+            border-left: 5px solid #2c7da0;
+            padding-left: 18px;
+        }
+        h3 {
+            margin: 24px 0 12px 0;
+            color: #2c5f7a;
+        }
+        .subtitle {
+            color: #5a6874;
+            margin-bottom: 28px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        .resource-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0 28px 0;
+        }
+        .resource-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 10px 18px;
+            border: 1px solid #e2edf7;
+            transition: all 0.1s ease;
+            text-decoration: none;
+            color: #1f5068;
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .resource-card:hover {
+            background: #e6f0fa;
+            border-color: #b9d0e7;
+            transform: translateY(-1px);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.8rem;
+            line-height: 1.45;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+        th {
+            background: #1f5068;
+            color: white;
+            padding: 10px 8px;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid #2c6280;
+        }
+        td {
+            border: 1px solid #dce5f0;
+            padding: 8px 8px;
+            vertical-align: top;
+            background-color: #fff;
+        }
+        .month-row {
+            background-color: #eef2f9;
+            font-weight: 600;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.7rem;
+            text-align: center;
+            color: #7f8c9a;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .tab-button {
+                display: none;
+            }
+            .tab-content {
+                display: block !important;
+                page-break-after: always;
+                padding: 0.3in;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .resource-card {
+                break-inside: avoid;
+            }
+            th {
+                background: #1f5068 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        .badge {
+            background: #2c7da0;
+            color: white;
+            border-radius: 30px;
+            padding: 2px 10px;
+            font-size: 0.7rem;
+            display: inline-block;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 5px solid #f0ad4e;
+            padding: 12px 18px;
+            margin: 20px 0;
+            border-radius: 12px;
+            font-size: 0.85rem;
+        }
+        .metaphysics-box {
+            background: #f4f0fa;
+            border-left: 5px solid #6f42c1;
+            padding: 12px 18px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🧭 The Complete Mastery Curriculum</h1>
+        <p>Intellectual · Technical · Strategic · Spiritual · Metaphysical · AI‑Augmented</p>
+        <small>📅 8+ months • 2–4h/day • Includes Aristotelian‑Thomistic metaphysics integrated with Carmelite spirituality</small>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-button active" data-tab="tab1">🎓 Set A & B — Foundations & Technical</button>
+        <button class="tab-button" data-tab="tab2">📈 Set C — Strategic Reading & Money Classics</button>
+        <button class="tab-button" data-tab="tab3">⛪ Track III — Theology & Metaphysics</button>
+        <button class="tab-button" data-tab="tab4">🤖 Track IV — AI Classroom (Cloud for your PC)</button>
+    </div>
+
+    <!-- ========= TAB 1: FOUNDATIONS (unchanged) ========= -->
+    <div id="tab1" class="tab-content active">
+        <h2>Set A & B: Intellectual + Technical Core</h2>
+        <div class="subtitle">Calculus · Logic · Statistics · Public Speaking · Python · Data Engineering · ML · MQL5</div>
+        <div class="resource-grid">
+            <a href="https://www.khanacademy.org/math/calculus-1" target="_blank" class="resource-card">📐 Khan Academy Calculus</a>
+            <a href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/" target="_blank" class="resource-card">🎓 MIT 18.01 Calculus</a>
+            <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJp3ioKjRrc1" target="_blank" class="resource-card">🧠 3Blue1Brown "Essence of Calculus"</a>
+            <a href="https://logic.stanford.edu/" target="_blank" class="resource-card">📘 Stanford Logic I (free)</a>
+            <a href="https://seeing-theory.brown.edu/" target="_blank" class="resource-card">📊 Seeing Theory (visual stats)</a>
+            <a href="https://www.lock5stat.com/StatKey/" target="_blank" class="resource-card">🔢 StatKey interactive</a>
+            <a href="https://www.edx.org/learn/data-science/harvard-university-data-science-machine-learning" target="_blank" class="resource-card">🤖 HarvardX Machine Learning (free)</a>
+            <a href="https://www.youtube.com/watch?v=xfzGZB4HhEE" target="_blank" class="resource-card">🐍 freeCodeCamp Algorithmic Trading Python</a>
+            <a href="https://github.com/DataTalksClub/data-engineering-zoomcamp" target="_blank" class="resource-card">🏭 Data Engineering Zoomcamp</a>
+            <a href="https://www.mql5.com/en/docs" target="_blank" class="resource-card">📈 MQL5 Official Docs</a>
+            <a href="https://www.wqu.edu/programs/msc-fe/" target="_blank" class="resource-card">🎓 WQU MSc Financial Engineering (tuition‑free)</a>
+            <a href="https://cloud.google.com/bigquery/public-data" target="_blank" class="resource-card">☁️ Google BigQuery public datasets</a>
+        </div>
+        <p><span class="badge">📅 32‑week roadmap</span> (daily 1.5‑2h) — combine with WQU part‑time.</p>
+        <table>
+            <thead><tr><th>Month</th><th>Week</th><th>Foundations (Set A)</th><th>Technical Tools (Set B)</th><th>Key Deliverable</th></tr></thead>
+            <tbody>
+                <tr class="month-row"><td rowspan="4">1</td><td>1</td><td>Propositional Logic (Copi Ch.1‑2)</td><td>Python Basics (CS50P)</td><td>Truth table cheat sheet</td></tr>
+                <tr><td>2</td><td>Proofs & equivalence (Copi Ch.6‑7)</td><td>Functions & loops</td><td>5 completed proofs</td></tr>
+                <tr><td>3</td><td>Predicate Logic (Copi Ch.8)</td><td>NumPy & Pandas intro</td><td>Translation of 15 sentences</td></tr>
+                <tr><td>4</td><td>Quantifier proofs + fallacies</td><td>Data cleaning & visualization</td><td>Logical critique of a speech</td></tr>
+                <tr class="month-row"><td rowspan="4">2</td><td>5</td><td>Probability basics (Welkowitz Ch.8)</td><td>SQL deep dive (BigQuery)</td><td>15 probability problems</td></tr>
+                <tr><td>6</td><td>Hypothesis testing (Welkowitz Ch.9)</td><td>Data pipelines (DE Zoomcamp)</td><td>One‑sample t‑test report</td></tr>
+                <tr><td>7</td><td>t‑tests & confidence intervals</td><td>Google BigQuery / dbt</td><td>Real medical data t‑test</td></tr>
+                <tr><td>8</td><td>Phase 1 exam: logic+stats</td><td>Automated data pipeline project</td><td>GitHub Actions daily pull</td></tr>
+                <tr class="month-row"><td rowspan="4">3</td><td>9</td><td>Descriptive stats & z‑scores</td><td>ML concepts: train/test split</td><td>Stock returns analysis</td></tr>
+                <tr><td>10</td><td>Probability distributions (normal/binomial)</td><td>Linear & logistic regression</td><td>House price prediction</td></tr>
+                <tr><td>11</td><td>Sampling & CLT (Seeing Theory)</td><td>Random forests / XGBoost</td><td>Customer churn classifier</td></tr>
+                <tr><td>12</td><td>ANOVA & chi‑square</td><td>K‑Means clustering, PCA</td><td>Segment stock market days</td></tr>
+                <tr class="month-row"><td rowspan="4">4</td><td>13</td><td>Correlation & regression (Welkowitz Ch.12)</td><td>Neural networks intro</td><td>Linear regression in Excel</td></tr>
+                <tr><td>14</td><td>Multiple regression & causality</td><td>Time series (ARIMA/Prophet)</td><td>Forecast price series</td></tr>
+                <tr><td>15</td><td>Public speaking: structure</td><td>Backtesting (backtrader/zipline)</td><td>3‑min speech outline</td></tr>
+                <tr><td>16</td><td>Phase 2 exam: statistics</td><td>ML project deployment (Streamlit)</td><td>Interactive dashboard</td></tr>
+                <tr class="month-row"><td rowspan="4">5</td><td>17</td><td>Limits & continuity (Khan Academy)</td><td>Algorithmic trading basics</td><td>Limit problem set</td></tr>
+                <tr><td>18</td><td>Derivatives & differentiation rules</td><td>Backtrader live data</td><td>Product/quotient rule set</td></tr>
+                <tr><td>19</td><td>Optimization (max/min problems)</td><td>Risk management (Sharpe, VaR)</td><td>5 applied max/min solutions</td></tr>
+                <tr><td>20</td><td>Integrals (Riemann sums, FTC)</td><td>MQL5 basic syntax & EA</td><td>10 definite integrals</td></tr>
+                <tr class="month-row"><td rowspan="4">6</td><td>21</td><td>Integration techniques (substitution, by parts)</td><td>MQL5 custom indicators</td><td>RSI/MACD implementation</td></tr>
+                <tr><td>22</td><td>Applications: probability & economics</td><td>MQL5 order management</td><td>Consumer surplus calc</td></tr>
+                <tr><td>23</td><td>Multivariate calculus (partial derivatives)</td><td>Strategy Tester in MT5</td><td>Gradient & critical points</td></tr>
+                <tr><td>24</td><td>Phase 3 exam: calculus</td><td>Optimize a simple EA</td><td>Comprehensive exam</td></tr>
+                <tr class="month-row"><td rowspan="2">7‑8</td><td>25‑28</td><td>Advanced logic + ethics of AI</td><td>Feature stores & MLOps basics</td><td>Policy analysis / regression capstone</td></tr>
+                <tr><td>29‑32</td><td>Stochastic processes & ODEs</td><td>End‑to‑end trading bot or dashboard</td><td>Live demo + documentation</td></tr>
+            </tbody>
+        </table>
+        <footer>Set A+B — 2h/day. Recommended pace: first 4 months Foundations, then add deep technical work.</footer>
+    </div>
+
+    <!-- ========= TAB 2: STRATEGIC READING (unchanged) ========= -->
+    <div id="tab2" class="tab-content">
+        <h2>Set C: Strategic Reading & Money / Trading Classics</h2>
+        <div class="subtitle">Sun Tzu · Machiavelli · Greene · Kahneman · Graham · Housel · Clausewitz · Brockway · Schumacher</div>
+        <div class="resource-grid">
+            <a href="https://www.gutenberg.org/ebooks/1232" target="_blank" class="resource-card">⚔️ The Art of War (Sun Tzu)</a>
+            <a href="https://www.gutenberg.org/ebooks/1232" target="_blank" class="resource-card">👑 The Prince (Machiavelli)</a>
+            <a href="https://www.goodreads.com/book/show/1303.The_Intelligent_Investor" target="_blank" class="resource-card">💎 The Intelligent Investor (Graham)</a>
+            <a href="https://www.goodreads.com/book/show/41804.The_Psychology_of_Money" target="_blank" class="resource-card">🧠 The Psychology of Money (Housel)</a>
+            <a href="https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow" target="_blank" class="resource-card">⚡ Thinking, Fast and Slow</a>
+            <a href="https://www.goodreads.com/book/show/34431.The_End_of_Economic_Man" target="_blank" class="resource-card">🌿 The End of Economic Man (Brockway)</a>
+            <a href="https://www.goodreads.com/book/show/27460.Small_Is_Beautiful" target="_blank" class="resource-card">🌍 Small is Beautiful (Schumacher)</a>
+            <a href="https://www.goodreads.com/book/show/367862.The_Federalist_Papers" target="_blank" class="resource-card">🏛️ The Federalist Papers</a>
+            <a href="https://www.goodreads.com/book/show/165542.The_48_Laws_of_Power" target="_blank" class="resource-card">📜 48 Laws of Power</a>
+            <a href="https://www.goodreads.com/book/show/852061.Thinking_Strategically" target="_blank" class="resource-card">🎲 Thinking Strategically (Dixit)</a>
+            <a href="https://www.goodreads.com/book/show/263263.Thinking_in_Systems" target="_blank" class="resource-card">🕸️ Thinking in Systems (Meadows)</a>
+            <a href="https://www.goodreads.com/book/show/102500.The_Art_of_War" target="_blank" class="resource-card">📖 On War (Clausewitz)</a>
+        </div>
+        <p><span class="badge">📅 32‑week reading journey</span> — 1 hour/day, integrates with technical studies.</p>
+        <table>
+            <thead><tr><th>Month</th><th>Theme</th><th>Key Books</th><th>Weekly Challenge</th></tr></thead>
+            <tbody>
+                <tr class="month-row"><td rowspan="2">1</td><td>Classical Strategy</td><td>Art of War, The Prince, 48 Laws of Power</td><td>1‑page "Art of War for Investors"</td></tr>
+                <tr><td>Power & Influence</td><td>33 Strategies of War, Machiavelli</td><td>Compare Greene & Sun Tzu on deception</td></tr>
+                <tr class="month-row"><td rowspan="2">2</td><td>Behavioral Economics</td><td>Thinking, Fast and Slow; The Behavioral Investor</td><td>3‑day bias journal + checklist</td></tr>
+                <tr><td>Judgment under Uncertainty</td><td>Kahneman / Tversky, heuristics</td><td>Rebuttal of 3 anchored headlines</td></tr>
+                <tr class="month-row"><td rowspan="2">3</td><td>Humanistic Economics</td><td>End of Economic Man, Small is Beautiful</td><td>Alternative definition of "economic rationality"</td></tr>
+                <tr><td>Political Economy</td><td>The Federalist Papers, Political Economy and Statesmanship</td><td>Modern "Federalist Paper" for a DAO</td></tr>
+                <tr class="month-row"><td rowspan="2">4</td><td>War & Competition</td><td>On War, Business Warfare, Marketing Warfare</td><td>Strategic audit of a corporate battle</td></tr>
+                <tr><td>Game Theory Intro</td><td>Thinking Strategically (Dixit), prisoner's dilemma</td><td>Solve airline pricing game</td></tr>
+                <tr class="month-row"><td rowspan="2">5</td><td>Systems & Networks</td><td>Thinking in Systems, Networks (Newman)</td><td>Causal loop diagram of a housing bubble</td></tr>
+                <tr><td>Complexity Science</td><td>Intro to Complex Systems, agent‑based models</td><td>Pseudocode for a market crash model</td></tr>
+                <tr class="month-row"><td rowspan="2">6</td><td>Money Classics</td><td>The Intelligent Investor, Common Stocks</td><td>Value vs growth comparison</td></tr>
+                <tr><td>Trading Psychology</td><td>Trading in the Zone, Technical Analysis</td><td>Japanese candlestick patterns cheat sheet</td></tr>
+                <tr class="month-row"><td rowspan="2">7</td><td>Modern Synthesis</td><td>The Psychology of Money, The Trader's Handbook</td><td>Investment thesis + risk checklist</td></tr>
+                <tr><td>Ethics & Business</td><td>A Catechism for Business, Cathonomics</td><td>Memo: Catholic social teaching applied to trading</td></tr>
+                <tr class="month-row"><td rowspan="2">8</td><td>Integration</td><td>Contradictory books (Greene vs Schumacher)</td><td>Reconciliation essay</td></tr>
+                <tr><td>Final Capstone</td><td>Role‑specific synthesis</td><td>20‑min presentation: personal strategic doctrine</td></tr>
+            </tbody>
+        </table>
+        <footer>Set C — read slowly, apply to real markets or political decisions.</footer>
+    </div>
+
+    <!-- ========= TAB 3: THEOLOGY + METAPHYSICS (UPDATED) ========= -->
+    <div id="tab3" class="tab-content">
+        <h2>⛪ Track III: Catholic Theology, Carmelite Spirituality & Metaphysics</h2>
+        <div class="subtitle">St. Teresa of Ávila · St. John of the Cross · St. Thérèse · Padre Pio · Aristotelian‑Thomistic Metaphysics</div>
+        <div class="resource-grid">
+            <a href="https://www.gutenberg.org/ebooks/20778" target="_blank" class="resource-card">📖 The Story of a Soul (St. Thérèse)</a>
+            <a href="https://en.wikisource.org/wiki/The_complete_works_of_Saint_John_of_the_Cross" target="_blank" class="resource-card">🔥 Complete Works of St. John of the Cross</a>
+            <a href="https://www.vatican.va/archive/ENG0015/_INDEX.HTM" target="_blank" class="resource-card">📜 Catechism of the Catholic Church</a>
+            <a href="https://www.padrepio.com/biography.html" target="_blank" class="resource-card">🕊️ Padre Pio: Biography & writings</a>
+            <a href="https://www.icspublications.org/collections/ocds-formation" target="_blank" class="resource-card">🏡 Secular Carmelite Formation (ICS)</a>
+            <a href="https://www.cacdigital.org.uk/" target="_blank" class="resource-card">🕯️ CACSDigital (Carmelite online formation)</a>
+            <a href="https://www.vaticannews.va/en/vatican-city/news/2022-11/mensuram-bonam-guidelines-catholic-investors.html" target="_blank" class="resource-card">📈 Mensuram Bonam (Vatican investing guidelines)</a>
+            <a href="https://www.cathonomics.com/" target="_blank" class="resource-card">🌍 Cathonomics (Annett)</a>
+            <a href="https://www.goodreads.com/book/show/17689150-a-catechism-for-business" target="_blank" class="resource-card">💼 A Catechism for Business</a>
+            <a href="https://classics.mit.edu/Aristotle/metaphysics.html" target="_blank" class="resource-card">📜 Aristotle's Metaphysics (MIT)</a>
+            <a href="https://edwardfeser.blogspot.com/" target="_blank" class="resource-card">🧠 Edward Feser's Blog (Thomistic metaphysics)</a>
+        </div>
+
+        <!-- Metaphysics sub‑module -->
+        <div class="metaphysics-box">
+            <strong>📚 Metaphysics Sub‑module (30 min/week integrated into this track)</strong><br>
+            Why: Metaphysics provides the philosophical infrastructure for theology, logic, and even investing. It asks: What is truth? What is change? What is value?<br><br>
+            <strong>Recommended reading order (light but deep):</strong>
+            <ul>
+                <li><strong>Months 1‑2:</strong> Edward Feser, <em>Aquinas: A Beginner's Guide</em> (chapters 1‑3: act/potency, causation) → <a href="https://www.goodreads.com/book/show/640438.Aquinas" target="_blank">Goodreads</a></li>
+                <li><strong>Months 3‑4:</strong> Feser, <em>Aquinas</em> (chapters 4‑6: essence/existence, God) → connect to your Carmelite prayer (God as <em>Ipsum Esse</em>)</li>
+                <li><strong>Months 5‑6:</strong> Aristotle, <em>Metaphysics</em> Book IV (first principles) and Book XII (Unmoved Mover) → <a href="https://classics.mit.edu/Aristotle/metaphysics.html" target="_blank">free MIT translation</a></li>
+                <li><strong>Months 7‑8:</strong> W. Norris Clarke, <em>The One and the Many</em> (selected chapters on participation) → connects systems thinking and network theory</li>
+            </ul>
+            <strong>Practical integration:</strong> Each week, after your metaphysical reading, ask: <em>"How does this concept of substance/accident or act/potency apply to my investing, trading, or political analysis?"</em> Write a one‑paragraph answer in your journal.
+        </div>
+
+        <p><span class="badge">🕯️ Contemplative reading & prayer rhythm</span> — 45‑60 min daily mental prayer + weekly spiritual reading + 30 min metaphysics.</p>
+        
+        <h3>📜 12‑month "Spiritual Cathedral" Plan (including Metaphysics)</h3>
+        <table>
+            <thead><tr><th>Phase</th><th>Weeks</th><th>Core Texts & Practice</th><th>Spiritual & Philosophical Goal</th></tr></thead>
+            <tbody>
+                <tr><td>Phase 1: Foundation of Prayer</td><td>1‑16</td><td>Story of a Soul; "Come, Pray with Carmel"; daily mental prayer (15‑20 min) + Feser's <em>Aquinas</em> ch.1‑3</td><td>Establish intimate conversation with God; grasp act/potency</td></tr>
+                <tr><td>Phase 2: Dark Night & Union</td><td>17‑40</td><td>Ascent of Mount Carmel, Dark Night, Spiritual Canticle + Feser ch.4‑6, Aristotle Metaphysics IV</td><td>Purification; understand essence/existence</td></tr>
+                <tr><td>Phase 3: Prophetic & Discernment</td><td>41‑52</td><td>Padre Pio letters, The Prophets and Our Times, Mensuram Bonam + Aristotle Metaphysics XII, Clarke's <em>The One and the Many</em></td><td>Discern God's voice; integrate participation metaphysics with systems thinking</td></tr>
+                <tr><td>Ongoing Integration</td><td>permanent</td><td>Catechism + "A Catechism for Business" + weekly metaphysical reflection on a market or policy event</td><td>Align portfolio and statecraft with Catholic social teaching and realist metaphysics</td></tr>
+            </tbody>
+        </table>
+
+        <h3>🧘 Daily & Weekly Rhythm (with Metaphysics)</h3>
+        <ul>
+            <li><strong>☀️ Daily mental prayer</strong> – 20‑30 min silence (St. Teresa: "close sharing between friends").</li>
+            <li><strong>📖 Weekly Lectio Divina</strong> – 1 hour on the Gospel (e.g., Luke).</li>
+            <li><strong>📜 Weekly Metaphysics reading</strong> – 30 min, following the plan above. Take notes in a separate journal.</li>
+            <li><strong>🕯️ Monthly spiritual direction</strong> – essential for navigating the Dark Night and for discussing metaphysical questions.</li>
+            <li><strong>🏡 Secular Carmelite vocation (optional)</strong> – after 1‑2 years of formation. <a href="https://www.icspublications.org/collections/ocds-formation" target="_blank">ICS formation materials →</a></li>
+        </ul>
+
+        <div class="warning">
+            <strong>💡 Example of metaphysics applied to your other tracks:</strong><br>
+            • <em>Investing:</em> A stock's price (accident) vs. its intrinsic value (substance). Metaphysical realism gives conviction to hold during volatility.<br>
+            • <em>Statecraft:</em> Is the "common good" real? Yes, grounded in the nature of persons. This changes how you legislate.<br>
+            • <em>AI & logic:</em> Truth is correspondence to reality – not just coherence. This guides how you evaluate LLM outputs.
+        </div>
+
+        <footer>⛪ This track requires docility, a spiritual director, and perseverance. Metaphysics is the philosophical grammar of theology – it deepens both.</footer>
+    </div>
+
+    <!-- ========= TAB 4: AI CLASSROOM (CLOUD FOR YOUR PC) ========= -->
+    <div id="tab4" class="tab-content">
+        <h2>🤖 Track IV: AI‑Augmented Learning (Cloud‑Based for your PC)</h2>
+        <div class="subtitle">Free / low‑cost AI tutors · Socratic prompting · Gamification · No local GPU required</div>
+
+        <div class="warning">
+            ⚠️ <strong>Your PC specs:</strong> 8GB RAM, Celeron 1.8GHz, integrated graphics (32MB). Local LLMs (7B+) are impossible. <br>
+            ✅ <strong>Solution:</strong> Use cloud APIs (Groq, OpenRouter) + lightweight scripts. All the educational power, none of the hardware limits.
+        </div>
+
+        <div class="resource-grid">
+            <a href="https://groq.com/" target="_blank" class="resource-card">⚡ Groq (free API, 30 req/min, Llama 3 / Mixtral)</a>
+            <a href="https://openrouter.ai/" target="_blank" class="resource-card">🌐 OpenRouter (200+ models, pay‑per‑token, $5 lasts months)</a>
+            <a href="https://github.com/ggerganov/llama.cpp" target="_blank" class="resource-card">🖥️ Llama.cpp (run tiny models locally on CPU – optional)</a>
+            <a href="https://github.com/opendatalab/MinerU" target="_blank" class="resource-card">📑 MinerU (parse your PDF textbooks – works on your PC)</a>
+            <a href="https://github.com/langchain-ai/langgraph" target="_blank" class="resource-card">🧠 LangGraph (multi‑agent orchestration, calls cloud APIs)</a>
+            <a href="https://www.notion.so/" target="_blank" class="resource-card">📋 Notion (free streak & XP tracker – replace Moodle)</a>
+            <a href="https://github.com/open-webui/open-webui" target="_blank" class="resource-card">💬 OpenWebUI (optional UI – can connect to Groq)</a>
+        </div>
+
+        <h3>📦 Step‑by‑Step Setup (No GPU Required)</h3>
+        <table>
+            <thead><tr><th>Step</th><th>Action</th><th>Why / How</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Sign up for <a href="https://console.groq.com" target="_blank">Groq Cloud</a> (free)</td><td>Get API key → fastest free LLM (Llama 3 70B, Mixtral 8x7B).</td></tr>
+                <tr><td>2</td><td>Install Python + <code>requests</code> or <code>openai</code> library</td><td>You'll call the API from scripts or use a simple chatbot.</td></tr>
+                <tr><td>3</td><td><strong>Socratic Tutor prompt</strong> – copy the template below</td><td>Forces the AI to guide, not give answers. Paste into system message.</td></tr>
+                <tr><td>4</td><td>(Optional) Use OpenWebUI in Docker (CPU mode)</td><td>Connect to Groq API → ChatGPT‑like interface on your PC.</td></tr>
+                <tr><td>5</td><td>Process your textbooks with MinerU</td><td>Convert PDFs to Markdown/LaTeX → upload to any RAG tool (or just search manually).</td></tr>
+                <tr><td>6</td><td>Create a simple XP / streak tracker in Notion or Excel</td><td>Gamification (Alpha Bucks style) – award points per daily study hour.</td></tr>
+            </tbody>
+        </table>
+
+        <h3>🧪 Socratic Prompt Template (Copy into any AI chat)</h3>
+        <div style="background: #f4f6fa; padding: 16px; border-radius: 16px; font-family: monospace; font-size: 0.8rem; margin: 20px 0;">
+            <strong>System prompt for your AI Tutor:</strong><br>
+            You are a Socratic tutor. Never give the final answer directly.<br>
+            Follow these rules:<br>
+            1. First ask the student to restate the problem in their own words.<br>
+            2. Ask ONE clarifying question at a time.<br>
+            3. If they make a mistake, validate the correct part, then ask a simpler sub‑question.<br>
+            4. Only after three correct attempts, provide a minimal confirmation.<br>
+            5. Never say "you are wrong". Say "let's check that step together".<br>
+            <br>
+            <em>Example for math:</em> "Can you walk me through how you started? What rule applies first?"
+        </div>
+
+        <h3>📊 Weekly Integration with Your Curriculum</h3>
+        <table>
+            <thead><tr><th>Week</th><th>Use AI for…</th><th>Prompt Example / Task</th></tr></thead>
+            <tbody>
+                <tr><td>1‑4 (Logic)</td><td>Truth tables & proofs</td><td>"Check my truth table. Ask me one question about a row that might be wrong."</td></tr>
+                <tr><td>5‑8 (Probability)</td><td>Conditional probability</td><td>"Give me a real‑world scenario. Ask me to set up Bayes' theorem step by step."</td></tr>
+                <tr><td>9‑16 (Statistics)</td><td>Hypothesis testing</td><td>"I think p<0.05 means the null is false. Ask me three questions about what p‑value actually means."</td></tr>
+                <tr><td>17‑24 (Calculus)</td><td>Derivatives & optimization</td><td>"Ask me to explain the chain rule with an example. Then give me a problem."</td></tr>
+                <tr><td>25‑32 (Capstone)</td><td>Role‑specific debugging</td><td>"Act as a quant developer. Review my Python backtest code for logical errors."</td></tr>
+            </tbody>
+        </table>
+
+        <h3>🏆 Gamification: Your “Alpha Bucks” Lite</h3>
+        <p>Use a simple spreadsheet or Notion database. Daily self‑report:</p>
+        <ul>
+            <li>➕ 10 XP per hour of focused study (max 30 XP/day)</li>
+            <li>🏅 20 XP for completing a weekly deliverable (e.g., a logic proof set)</li>
+            <li>🎯 50 XP for a perfect self‑graded exam</li>
+            <li>🎙️ 100 XP for recording a public speaking video</li>
+            <li><strong>Streak bonus:</strong> +5 XP per consecutive day (resets after missed day)</li>
+        </ul>
+        <p><strong>Reward yourself:</strong> At 500 XP → buy a book; 2000 XP → a day off; 5000 XP → upgrade a PC component (if desired).</p>
+
+        <div class="warning">
+            💡 <strong>Pro tip:</strong> You do NOT need a powerful PC. All heavy computation runs on Groq’s servers (free). Your Celeron + 8GB is perfectly adequate for browsing, writing, and calling APIs. Focus on the Socratic method – the hardware is irrelevant.
+        </div>
+
+        <footer>Track IV – Use daily for 30–60 min alongside your core studies. The AI becomes your patient, 24/7 tutor. No subscription fees, no GPU needed.</footer>
+    </div>
+
+    <div style="padding: 16px 32px 28px 32px; background: #fafdff; border-top: 1px solid #e2edf7;">
+        <p style="font-size:0.85rem; margin:0;"><strong>💡 How to use the 4 tracks:</strong> All run in parallel. Recommended daily: Set A+B (1.5‑2h) + Set C (45min) + Theology/Metaphysics (45min) + AI Tutor (30min). Extend duration to 12‑18 months if needed. <em>Non coerceri maximo, contineri tamen a minimo divinum est</em> (St. Teresa).</p>
+    </div>
+</div>
+
+<script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+    function activateTab(tabId) {
+        contents.forEach(c => c.classList.remove('active'));
+        buttons.forEach(b => b.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        const activeBtn = Array.from(buttons).find(b => b.dataset.tab === tabId);
+        if (activeBtn) activeBtn.classList.add('active');
+    }
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.dataset.tab;
+            if (tabId) activateTab(tabId);
+        });
+    });
+</script>
+</body>
+</html>
