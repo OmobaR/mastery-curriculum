@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Engineering Mastery Curriculum</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2332;
+      --text: #e7ecf3;
+      --muted: #9fb0c3;
+      --accent: #3b82f6;
+      --accent-2: #22c55e;
+      --border: #2d3a4f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .meta strong {
+      color: var(--text);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin: 2.8rem 0 1.2rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin: 2rem 0 0.8rem;
+      color: #93c5fd;
+    }
+
+    p, li {
+      margin-bottom: 0.7rem;
+      color: #d1d9e6;
+    }
+
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #93c5fd;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      margin: 1.2rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    th {
+      background: #243044;
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: #151e2b;
+    }
+
+    .week-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.8rem 0;
+    }
+
+    .week-block h3 {
+      margin-top: 0;
+      color: #4ade80;
+    }
+
+    .day {
+      margin: 0.6rem 0;
+      padding-left: 0.5rem;
+      border-left: 3px solid #334155;
+    }
+
+    .day strong {
+      color: #94a3b8;
+      min-width: 70px;
+      display: inline-block;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #1e3a5f;
+      color: #93c5fd;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      margin-right: 0.4rem;
+    }
+
+    .resources a {
+      display: inline-block;
+      margin: 0.3rem 0.8rem 0.3rem 0;
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      table { font-size: 0.85rem; }
+      th, td { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Data Engineering Mastery Curriculum</h1>
+      <p class="subtitle">Production-Ready • AI-Augmented • Portfolio-Driven</p>
+      <div class="meta">
+        <span><strong>Duration:</strong> 12 weeks (extendable to 16)</span>
+        <span><strong>Commitment:</strong> 12–15 hours/week</span>
+        <span><strong>Goal:</strong> Junior / Associate Data Engineer ready</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Philosophy</h2>
+      <div class="card">
+        <p>Vibe-coding is a powerful multiplier — never a substitute for understanding. Docker is introduced from Week 1 and used throughout. Every major skill is proven through real, hiring-relevant projects.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Core Tracks</h2>
+      <div class="card">
+        <p><span class="tag">Track I</span> <strong>Technical Foundations</strong> — Docker • Advanced SQL • Data Modeling • Production Python</p>
+        <p><span class="tag">Track II</span> <strong>Modern Data Stack</strong> — dbt • Orchestration (Prefect/Airflow) • Data Quality • Incremental Pipelines</p>
+        <p><span class="tag">Track III</span> <strong>Cloud & Production Thinking</strong> — Cloud (BigQuery / AWS) • Observability • Documentation • System Design</p>
+        <p><span class="tag">Track IV</span> <strong>Portfolio & Career</strong> — Flagship projects • GitHub excellence • Interview preparation • Applications</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Flagship Projects</h2>
+
+      <div class="card">
+        <h3>Project 1 – E-commerce Order & Customer Analytics Pipeline <span class="tag">Mandatory</span></h3>
+        <p><strong>Domain:</strong> Online retail / marketplace</p>
+        <p>Ingest orders, customers, products → dimensional model → dbt + tests → orchestrated incremental pipeline → data quality → cloud landing.</p>
+        <p><em>Why it wins interviews:</em> Universal business domain. Demonstrates modeling, reliability, and business metrics.</p>
+      </div>
+
+      <div class="card">
+        <h3>Project 2 – Ride-Hailing / Logistics Trip Pipeline <span class="tag">Strong Second</span></h3>
+        <p><strong>Domain:</strong> Transportation / logistics</p>
+        <p>High-volume public trip data → late-arriving data handling → dimensional model → dbt + orchestration + monitoring.</p>
+        <p><em>Why it wins interviews:</em> Industry benchmark dataset. Shows you can handle real-world scale and messiness.</p>
+      </div>
+
+      <div class="card">
+        <h3>Project 3 – SaaS Product Usage & Subscription Pipeline <span class="tag">Excellent Alternative</span></h3>
+        <p><strong>Domain:</strong> SaaS / product analytics</p>
+        <p>Event + subscription data → user/activation/churn models → key SaaS metrics in dbt.</p>
+        <p><em>Why it wins interviews:</em> Extremely relevant to SaaS companies (major employers of data engineers).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>12-Week Roadmap Overview</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Focus</th>
+            <th>Key Deliverable</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Environment & Docker</td><td>Containerized local stack</td></tr>
+          <tr><td>2</td><td>Advanced SQL</td><td>15–20 documented SQL solutions</td></tr>
+          <tr><td>3</td><td>Data Modeling</td><td>Project 1 dimensional model + DDL</td></tr>
+          <tr><td>4</td><td>Production Python</td><td>Reusable tested ingestion package</td></tr>
+          <tr><td>5</td><td>Data Quality & Idempotency</td><td>Quality + idempotent pipeline logic</td></tr>
+          <tr><td>6</td><td>First End-to-End Pipeline</td><td>Working local Project 1 pipeline</td></tr>
+          <tr><td>7</td><td>dbt Core</td><td>Full dbt project with tests & docs</td></tr>
+          <tr><td>8</td><td>Orchestration</td><td>Fully orchestrated Project 1</td></tr>
+          <tr><td>9</td><td>Integration & Second Project</td><td>Polished Project 1 + Project 2 started</td></tr>
+          <tr><td>10</td><td>Cloud Extension</td><td>Cloud version of flagship project</td></tr>
+          <tr><td>11</td><td>Portfolio Polish</td><td>2–3 polished GitHub projects</td></tr>
+          <tr><td>12</td><td>Interview Prep & Launch</td><td>Active applications underway</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Detailed Daily Plan</h2>
+
+      <!-- Week 1 -->
+      <div class="week-block">
+        <h3>Week 1 – Environment & Docker</h3>
+        <div class="day"><strong>Day 1:</strong> Install Docker Desktop. Watch <a href="https://www.youtube.com/watch?v=3c-iBn73dDE" target="_blank">TechWorld with Nana – Docker Tutorial for Beginners</a> (first half). Run hello-world, nginx, and a basic Python container.</div>
+        <div class="day"><strong>Day 2:</strong> Learn Dockerfile syntax. Vibe-code a simple Python app → understand every line. Build and run it.</div>
+        <div class="day"><strong>Day 3:</strong> Volumes, networks, and port mapping. Practice with a Postgres container.</div>
+        <div class="day"><strong>Day 4:</strong> Docker Compose fundamentals. Create a multi-service docker-compose.yml.</div>
+        <div class="day"><strong>Day 5–6:</strong> Build your permanent local development stack (Python + Postgres + volumes). Document it thoroughly.</div>
+        <div class="day"><strong>Day 7:</strong> Review + write a short reflection on reproducibility.</div>
+        <p><strong>Deliverable:</strong> Fully working containerized local environment.</p>
+      </div>
+
+      <!-- Week 2 -->
+      <div class="week-block">
+        <h3>Week 2 – Advanced SQL</h3>
+        <div class="day"><strong>Day 1–2:</strong> Complete the free <a href="https://datalemur.com/sql-tutorial" target="_blank">DataLemur SQL Tutorial</a>. Practice SELECT, JOINs, GROUP BY, CASE.</div>
+        <div class="day"><strong>Day 3–4:</strong> Window functions deep dive (ROW_NUMBER, RANK, LAG/LEAD, running totals). Solve 8–10 medium questions on <a href="https://datalemur.com/questions" target="_blank">DataLemur</a>.</div>
+        <div class="day"><strong>Day 5:</strong> CTEs, subqueries, and basic query performance (EXPLAIN).</div>
+        <div class="day"><strong>Day 6–7:</strong> Solve 10+ mixed medium/hard questions. Push clean, well-commented solutions to GitHub.</div>
+        <p><strong>Deliverable:</strong> 15–20 documented SQL solutions on GitHub.</p>
+        <p>Extra practice: <a href="https://mode.com/sql-tutorial/" target="_blank">Mode Analytics SQL Tutorial</a></p>
+      </div>
+
+      <!-- Week 3 -->
+      <div class="week-block">
+        <h3>Week 3 – Data Modeling</h3>
+        <div class="day"><strong>Day 1–2:</strong> Study Kimball dimensional modeling (star schema, fact vs dimension, grain, SCD basics). Start with <a href="https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/" target="_blank">Kimball Group free articles</a>.</div>
+        <div class="day"><strong>Day 3:</strong> Design the full star schema for <strong>Project 1 (E-commerce)</strong>.</div>
+        <div class="day"><strong>Day 4–5:</strong> Write complete DDL in your Dockerized Postgres and load sample data.</div>
+        <div class="day"><strong>Day 6–7:</strong> Write analytical queries against your model. Document the design decisions.</div>
+        <p><strong>Deliverable:</strong> Project 1 dimensional model + DDL complete.</p>
+      </div>
+
+      <!-- Week 4 -->
+      <div class="week-block">
+        <h3>Week 4 – Production-Grade Python</h3>
+        <div class="day"><strong>Day 1–2:</strong> Typing, logging, configuration management, environment variables, modular structure.</div>
+        <div class="day"><strong>Day 3–4:</strong> Robust error handling and pytest. Vibe-code then heavily refactor.</div>
+        <div class="day"><strong>Day 5–7:</strong> Build a reusable, tested ingestion package for Project 1 and containerize it.</div>
+        <p><strong>Deliverable:</strong> Production-quality ingestion module inside Docker.</p>
+      </div>
+
+      <!-- Week 5 -->
+      <div class="week-block">
+        <h3>Week 5 – Data Quality & Idempotency</h3>
+        <div class="day"><strong>Day 1–2:</strong> Core data quality concepts (completeness, uniqueness, validity, consistency).</div>
+        <div class="day"><strong>Day 3–5:</strong> Implement validation checks and make the Project 1 pipeline idempotent.</div>
+        <div class="day"><strong>Day 6–7:</strong> Practice safe re-runs and basic backfill logic. Document failure modes.</div>
+        <p><strong>Deliverable:</strong> Quality + idempotency layer for Project 1.</p>
+      </div>
+
+      <!-- Week 6 -->
+      <div class="week-block">
+        <h3>Week 6 – First End-to-End Local Pipeline</h3>
+        <div class="day"><strong>Day 1–4:</strong> Build complete extract → transform → load for <strong>Project 1</strong> inside Docker Compose.</div>
+        <div class="day"><strong>Day 5–7:</strong> Add logging, quality checks, configuration, and simple scheduling.</div>
+        <p><strong>Deliverable:</strong> Working local Project 1 pipeline.</p>
+      </div>
+
+      <!-- Week 7 -->
+      <div class="week-block">
+        <h3>Week 7 – dbt Core</h3>
+        <div class="day"><strong>Day 1–2:</strong> Install dbt Core + Postgres adapter. Complete the free <a href="https://learn.getdbt.com/learn/course/dbt-fundamentals" target="_blank">dbt Fundamentals course</a>.</div>
+        <div class="day"><strong>Day 3–7:</strong> Build the full dbt project for Project 1 (models, sources, tests, documentation, incremental models).</div>
+        <p><strong>Deliverable:</strong> Project 1 dbt layer complete with tests and docs.</p>
+        <p>Docs: <a href="https://docs.getdbt.com/" target="_blank">Official dbt Documentation</a></p>
+      </div>
+
+      <!-- Week 8 -->
+      <div class="week-block">
+        <h3>Week 8 – Orchestration</h3>
+        <div class="day"><strong>Day 1–3:</strong> Complete the <a href="https://docs.prefect.io/latest/tutorial/" target="_blank">Prefect official tutorial</a> (flows, tasks, retries, logging, scheduling).</div>
+        <div class="day"><strong>Day 4–7:</strong> Convert Project 1 into fully orchestrated Prefect flows with proper error handling and monitoring.</div>
+        <p><strong>Deliverable:</strong> Project 1 fully orchestrated and production-ready locally.</p>
+        <p>Alternative: <a href="https://airflow.apache.org/docs/apache-airflow/stable/start.html" target="_blank">Apache Airflow Getting Started</a></p>
+      </div>
+
+      <!-- Week 9 -->
+      <div class="week-block">
+        <h3>Week 9 – Integration & Second Project</h3>
+        <div class="day"><strong>Day 1–4:</strong> Final polish of Project 1 (architecture diagram, professional README, monitoring notes).</div>
+        <div class="day"><strong>Day 5–7:</strong> Begin <strong>Project 2 (Ride-Hailing/Logistics)</strong> — reuse your Docker + dbt + orchestration patterns. Focus on volume and late-arriving data.</div>
+        <p><strong>Deliverable:</strong> Polished Project 1 + Project 2 foundation started.</p>
+      </div>
+
+      <!-- Week 10 -->
+      <div class="week-block">
+        <h3>Week 10 – Cloud Extension</h3>
+        <div class="day"><strong>Day 1–3:</strong> Set up <a href="https://cloud.google.com/bigquery/docs/sandbox" target="_blank">Google BigQuery free tier</a> (or AWS Free Tier). Move key parts of Project 1 to the cloud.</div>
+        <div class="day"><strong>Day 4–7:</strong> Continue Project 2 or begin Project 3 (SaaS) using the same modern stack.</div>
+        <p><strong>Deliverable:</strong> Cloud version of flagship project + progress on second project.</p>
+      </div>
+
+      <!-- Week 11 -->
+      <div class="week-block">
+        <h3>Week 11 – Portfolio Polish</h3>
+        <div class="day"><strong>Day 1–4:</strong> Finalize 2–3 projects. Write excellent READMEs, create architecture diagrams, record short Loom walkthroughs.</div>
+        <div class="day"><strong>Day 5–7:</strong> Clean GitHub profile and create a simple portfolio overview.</div>
+        <p><strong>Deliverable:</strong> Hiring-ready public portfolio.</p>
+      </div>
+
+      <!-- Week 12 -->
+      <div class="week-block">
+        <h3>Week 12 – Interview Prep & Launch</h3>
+        <div class="day"><strong>Day 1–3:</strong> Daily live SQL practice on <a href="https://datalemur.com/questions" target="_blank">DataLemur</a> + pipeline design questions.</div>
+        <div class="day"><strong>Day 4–5:</strong> Practice explaining your own projects out loud (record yourself).</div>
+        <div class="day"><strong>Day 6–7:</strong> Apply to 10–15+ roles (Turing, Andela, Remote4Africa, LinkedIn, Upwork data roles, etc.).</div>
+        <p><strong>Deliverable:</strong> Active job applications underway.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Essential Free Resources</h2>
+      <div class="card resources">
+        <p><strong>Docker:</strong> <a href="https://www.youtube.com/watch?v=3c-iBn73dDE" target="_blank">TechWorld with Nana – Docker Tutorial</a></p>
+        <p><strong>SQL:</strong> <a href="https://datalemur.com/sql-tutorial" target="_blank">DataLemur SQL Tutorial</a> • <a href="https://datalemur.com/questions" target="_blank">DataLemur Questions</a> • <a href="https://mode.com/sql-tutorial/" target="_blank">Mode Analytics SQL Tutorial</a></p>
+        <p><strong>Data Modeling:</strong> <a href="https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/" target="_blank">Kimball Group Techniques</a></p>
+        <p><strong>dbt:</strong> <a href="https://learn.getdbt.com/learn/course/dbt-fundamentals" target="_blank">dbt Fundamentals Course</a> • <a href="https://docs.getdbt.com/" target="_blank">dbt Docs</a></p>
+        <p><strong>Orchestration:</strong> <a href="https://docs.prefect.io/latest/tutorial/" target="_blank">Prefect Tutorial</a> • <a href="https://airflow.apache.org/docs/apache-airflow/stable/start.html" target="_blank">Airflow Getting Started</a></p>
+        <p><strong>Companion Course:</strong> <a href="https://github.com/DataTalksClub/data-engineering-zoomcamp" target="_blank">DataTalksClub Data Engineering Zoomcamp</a></p>
+        <p><strong>Cloud:</strong> <a href="https://cloud.google.com/bigquery/docs/sandbox" target="_blank">BigQuery Sandbox</a> • <a href="https://aws.amazon.com/free/" target="_blank">AWS Free Tier</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Weekly Rhythm</h2>
+      <div class="card">
+        <ul>
+          <li><strong>40–50%</strong> Building & debugging (heavy vibe-coding allowed)</li>
+          <li><strong>30%</strong> Deliberate learning & reading</li>
+          <li><strong>20%</strong> Documentation + reflection</li>
+        </ul>
+        <p><strong>End-of-week reflection prompt:</strong><br>
+        “What broke this week? What do I now understand that I didn’t before? What would I do differently next time?”</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Success Criteria (End of Week 12)</h2>
+      <div class="card">
+        <ul>
+          <li>You can explain every major component of your pipelines without looking at the code</li>
+          <li>You have 2–3 public, production-oriented GitHub projects with clear architecture diagrams and READMEs</li>
+          <li>You can design a simple end-to-end pipeline on a whiteboard</li>
+          <li>You are actively applying to roles</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>Data Engineering Mastery Curriculum • Built for serious self-learners</p>
+      <p>Follow the plan linearly. The projects <em>are</em> the curriculum.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
